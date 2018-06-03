@@ -2,13 +2,55 @@
 <html lang="jp">
 <head>
   <meta charset="UTF-8">
+
   <title>Kimken's website</title>
+  
+  <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet" >
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+  <link rel="shortcut icon" href="images/icon.jpg" type=image/x-con">
+
+  <link rel="stylesheet" href='styles/main.css'>
+  <script src="scripts/gl.js">
+  
+/*window.addEventListener('load',init);
+
+  
+function init(){
+
+
+  const width = 960;
+  const length =540;
+
+  const renderer = new THREE.WebGLRenderer({
+      canvas: document.querySelector('#myCanvas')
+  });
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(width,height);
+  
+  const scene = new THREE.Scene();
+
+  const camera = new THREE.PerspectiveCamera(45,width/height);
+  camera.position.set(0,0,1000);
+
+  const geometry = new THREE.BoxGeometry(200,200,200);
+  const material = new THREE.MeshNormalMaterial();
+  const box = new THREE.Mesh(geometry,material);
+  scene.add(box);
+
+  tick();
+
+  function tick(){
+    box.rotation.y +=0.01;
+    //renderer.render(scene,camera);
+
+    requestAnimationFrame(tick);
+  }
+}
+  </script> 
 </head>
 <body>
-  <div>
-    <ul>
-      <l>test</l>
-    </ul>
-  </div>i 
+  <h1>Kimura's website</h1>
+  <canvas id="myCanvas"></canvas>
 </body>
 </html>
