@@ -5,7 +5,8 @@ window.addEventListener('load',init);
   
 function init(){
 
-
+	let rot = 0;
+  const radian = rot * Math.PI / 180;
   const width = 960;
   const height = 960;
 
@@ -20,17 +21,24 @@ function init(){
   const camera = new THREE.PerspectiveCamera(45,width/height);
   camera.position.set(0,0,1000);
 
-  const geometry = new THREE.BoxGeometry(400,400,400);
-  const material = new THREE.MeshNormalMaterial();
-  const box = new THREE.Mesh(geometry,material);
-  scene.add(box);
+  const geometry = new THREE.SphereGeometry(300,30,30);
+  const material = new THREE.MeshStandardMaterial({
+	map:new THREE.TextureLoader().load('../images/sun.jpg'),
+	side:THREE.DoubleSide,
+	});
+  const earth = new THREE.Mesh(geometry,material);
+  scene.add(earth);
+	const Light =new THREE.DirectionalLight(0xffffff);
+	Light.position.set(1,1,1);
+	scene.add(Light);
+
 
   tick();
 
   function tick(){
-    box.rotation.y +=0.01;
-    box.rotation.z +=0.01;
-    box.rotation.x +=0.01;
+    earth.rotation.y +=0.01;
+    earth.rotation.z +=0.01;
+    earth.rotation.x +=0.01;
 
     rend.render(scene,camera);
 
